@@ -9,8 +9,8 @@ Pre-requisites
 o	Maven
 o	Cucumber
 Setting up Project
-•	Install Java and set path.
-•	Install Maven and set path.
+•	Install JDK 1.8+ (make sure Java class path is set)
+•	Install Maven  (make sure .m2 class path is set)
 •	Clone respective repository or download zip.
 o	https://github.com/selenium 
 •	Clone the project from git
@@ -19,12 +19,23 @@ o	https://github.com/selenium
 •	Select Maven -> Existing Maven Projects and click on Next button
 •	Click on Browse and navigate to git directory and select folder
 o	Select pom.xml and click on finish button
+Download chromedriver https://sites.google.com/a/chromium.org/chromedriver/downloads
+Browser driver (make sure you have your desired browser driver and class path is set)
+Maven
+To run the tests on Google Chrome:
+
+ChromeDriver
+Set a system variable of "webdriver.chrome.driver" to point to the file downloaded above, either permanently or as part of running Maven: mvn test -Dwebdriver.chrome.driver=path/to/chromedrive
 Building Project 
 •	Goto project directory.
 Use "mvn clean install" command to build the project.
 Running features
+Open command prompt and navigate to the project directory and type mvn clean test command to run features
+Steps
 •	Goto project directory.
 •	Use "mvn test" command to run features.
+To run specific feature if you have multiple feature files use, 
+mvn test -Dcucumber.options="classpath:features/my_first.feature"
  
 Framework Description:
 Automation tests are designed in Page Object Model over the top of cucumber framework.
@@ -43,7 +54,9 @@ This folder contains packages Runner and feature
 •	Runner package contains junit classes for running specific test suites.
 •	step definitions for all features added in features folder are added in stepdefs package.
 Executing Tests:
-To run test
+Running the tests - from IDE
+Run src/test/java/cucumber_runners/TestRunner.java as maven test
+
 1.	select TestRunner.java from Runner package under folder src/test/resource
 2.	Click on Run menu option and select run as JUnit Tests
 
