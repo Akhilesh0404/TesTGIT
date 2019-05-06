@@ -11,7 +11,7 @@ Setting up selenium-cucumber-java:
 Install Java and set path.
 Install Maven and set path.
 Clone respective repository or download zip.
-maven : https://github.com/selenium-cucumber/selenium-cucumber-java-maven-example
+maven : https://github.com/
 
 Building Project:
 Goto project directory.
