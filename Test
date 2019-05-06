@@ -1,10 +1,34 @@
-Welcome
-Addition 
+selector.properties
+#                             	 SELENIUM-CUCUMBER PROPERTIES                            #
+##########################################################################################
+# This is the properties file that contains all the selector for the Selenium-Cucumber Project.
+englishFlag=//a[@href='indexE.html']/img
+cursosMenuLink=//li[@class='inline-block']/p[@class='no-margin' and contains(., "cursos")]
+movilCourses=//a[@class='black-text' and contains(., "Móvil")]
 
-A
-B
-Done
+--
+Feature: Cursos section on the Homepage
+        As a user I can go to the Código Facilito homepage, click on cursos and check the cursos page.
 
+  Scenario: Get the Cursos section on the Código Facilito website.
+    Given I navigate to "http://www.codigofacilito.com"
+    When I click on element having xpath "cursosMenuLink"
+    And I wait for 5 seconds
+    Then element having xpath "movilCourses" should be present--
+    
+    --
+    
+    log4j.properties
+    --
+    # This file sets the logging properties, in this case the output to console
 
-Final
+# Root logger option
+log4j.rootLogger=INFO, stdout
+ 
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 
+http://testerstories.com/2015/10/page-objects-with-selenium-and-cucumber-jvm/
