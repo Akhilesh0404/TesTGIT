@@ -21,4 +21,4 @@ Use "mvn clean install" command to Build the project.
 Running features:
 Goto project directory.
 
-Use "mvn test" command to run features.
+Use "mvn test" command to run features..
